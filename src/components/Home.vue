@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    
+
   </div>
 </template>
 
@@ -17,18 +17,8 @@ export default {
 
   },
   methods: {
-    ...mapActions([
-      'inputProduct'
-    ]),
-    addProduct () {
-      this.inputProduct(this.product)
-      this.product.name = ''
-      this.product.price = ''
-      this.product.count = ''
-      this.product.img = ''
-    }
-  }
 
+  }
 }
 </script>
 
