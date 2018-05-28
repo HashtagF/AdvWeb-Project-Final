@@ -19,13 +19,15 @@
             <th>วันที่โพส</th>
             <th>แก้ไข</th>
             <th>ลบ</th>
+            <th>Preview</th>
           </tr>
           <tr v-for="(news, index) in newsAll" :key="index">
-            <td>{{count++}}</td>
+            <td>{{number++}}</td>
             <td>{{news.title}}</td>
             <td>{{news.date}}</td>
-            <td> <img src="../assets/edit.svg" alt=""> </td>
-            <td> <a href="#" @click="removeNews(index)"><img src="../assets/delete.svg" alt=""></a>  </td>
+            <td> <a href="#" @click="editNews(index)"><img src="../assets/edit.svg" alt=""></a>   </td>
+            <td> <a href="#" @click="delNews(index)"><img src="../assets/delete.svg" alt=""></a>  </td>
+            <td> <router-link to="ShowNews"><a href="#" @click="readNews(index)"><img src="../assets/show.svg" alt=""></a></router-link> </td>
           </tr>
         </table>
       </div>
@@ -39,7 +41,7 @@ export default {
   name: 'Dashboard',
   data () {
     return {
-      count: '1'
+      number: 1
     }
   },
   created () {
@@ -53,8 +55,45 @@ export default {
   methods: {
     ...mapActions([
       'showNews',
-      'removeNews'
-    ])
+      'removeNews',
+      'readNews'
+    ]),
+    delNews (index) {
+      this.$swal({
+        title: 'Are you sure?',
+        text: 'ลบโพส !',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Delete it!'
+      }).then((result) => {
+        if (result.value) {
+          this.$swal(
+            'ลบโพส !',
+            'success'
+          )
+          this.removeNews(index)
+          this.$router.push({path: '/Dashboard'})
+        }
+      })
+    },
+    editNews (index) {
+      this.readNews(index)
+      this.$swal({
+        title: 'Are you sure?',
+        text: 'แก้ไขโพส !',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Edit Post!'
+      }).then((result) => {
+        if (result.value) {
+          this.$router.push({path: '/UpdateNews'})
+        }
+      })
+    }
   }
 }
 </script>

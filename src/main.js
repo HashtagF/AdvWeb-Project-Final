@@ -6,9 +6,12 @@ import router from './router'
 import Vuex from 'vuex'
 import BootstrapVue from 'bootstrap-vue'
 import { store } from './store/store'
+import VueSweetalert2 from 'vue-sweetalert2'
 
+Vue.use(VueSweetalert2)
 Vue.use(Vuex)
 Vue.use(BootstrapVue)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

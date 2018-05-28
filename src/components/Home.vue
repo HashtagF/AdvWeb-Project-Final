@@ -6,12 +6,12 @@
       </div>
     </div>
     <div class="showNews row">
-      <div class="col-4" v-for="(news, index) in newsAll" :key="index">
-        <div class="card" style="width: 90%;">
+      <div class="col-4 px-1 pb-1" v-for="(news, index) in newsAll" :key="index">
+        <div class="card" style="width: 100%;">
           <img class="card-img-top" :src="news.img" style="height:200px; width:auto;">
           <div class="card-body">
             <h5 class="card-title">{{news.title}}</h5>
-            <div class="card-text" v-html="news.content.substr(0,50)"></div>
+            <div class="card-text" v-html="news.content.substr(0,40)"></div>
             <router-link to='ShowNews'><a href="#" class="btn btn-primary " @click="readNews(index)">Read More</a></router-link>
           </div>
         </div>

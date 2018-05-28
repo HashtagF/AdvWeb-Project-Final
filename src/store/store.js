@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import firebase from 'firebase'
 
+Vue.use(Vuex)
+
 let config = {
   apiKey: 'AIzaSyCmWtP5PY9Jezs94HjrzvfdxNIAhKcDDXU',
   authDomain: 'midtermadv.firebaseapp.com',
@@ -17,7 +19,6 @@ provider.setCustomParameters({
   'display': 'popup'
 })
 var db = firebaseApp.database()
-Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     news: {},
@@ -56,6 +57,12 @@ export const store = new Vuex.Store({
     },
     removeNews (context, key) {
       db.ref('News').child(key).remove()
+    },
+    updateNews (context, news) {
+      db.ref('News').child(context.state.readNew + '/title').set(news.title)
+      db.ref('News').child(context.state.readNew + '/date').set(news.date)
+      db.ref('News').child(context.state.readNew + '/img').set(news.img)
+      db.ref('News').child(context.state.readNew + '/content').set(news.content)
     }
   }
 })

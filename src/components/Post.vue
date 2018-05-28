@@ -32,8 +32,11 @@
       </div>
     </div>
     <div class="row pt-3">
-      <div class="col">
+      <div class="col-8">
         <button type="button" class="btn btn-primary btn-lg btn-block" @click="addNews()">Post</button>
+      </div>
+      <div class="col-4">
+        <button type="button" class="btn btn-danger btn-lg btn-block" @click="cancelNews()">Cancel</button>
       </div>
     </div>
   </div>
@@ -62,11 +65,35 @@ export default {
       'inputNews'
     ]),
     addNews () {
+      this.$swal({
+        type: 'success',
+        title: 'Success Post'
+      })
       this.inputNews(this.News)
       this.News.title = ''
       this.News.content = ''
       this.News.img = ''
       this.News.date = ''
+      this.$router.push({path: '/Dashboard'})
+    },
+    cancelNews () {
+      this.$swal({
+        title: 'Are you sure?',
+        text: 'ยกเลิกการโพส !',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Cancel it!'
+      }).then((result) => {
+        if (result.value) {
+          this.$swal(
+            'ยกเลิกการโพส !',
+            'success'
+          )
+          this.$router.push({path: '/Dashboard'})
+        }
+      })
     }
   },
   components: {

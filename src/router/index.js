@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Post from '@/components/Post'
 import ShowNews from '@/components/ShowNews'
 import Dashboard from '@/components/Dashboard'
+import UpdateNews from '@/components/editPost'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/Dashboard',
       name: 'Dashboard',
       component: Dashboard
+    },
+    {
+      path: '/UpdateNews',
+      name: 'UpdateNews',
+      component: UpdateNews
     }
   ]
 })

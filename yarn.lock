@@ -1011,7 +1011,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -6098,6 +6098,14 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+sweetalert2@7.x, sweetalert2@^7.21.1:
+  version "7.21.1"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-7.21.1.tgz#0d532d05e367d68e86fb0e7f48c6a96d60ab9d82"
+
+sweetalert2@^6.6.6:
+  version "6.11.5"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-6.11.5.tgz#a1ede34089225eb864898f4b613db4fec5dbe334"
+
 table@4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/table/-/table-4.0.2.tgz#a33447375391e766ad34d3486e6e2aedc84d2e36"
@@ -6477,6 +6485,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-date@^1.1.10:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/vue-date/-/vue-date-1.1.10.tgz#ffc65f5697069e8f6d7fca1631a11ab4fd982c1e"
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -6525,6 +6537,20 @@ vue-style-loader@^3.0.0, vue-style-loader@^3.0.1:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
+vue-sweetalert2@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/vue-sweetalert2/-/vue-sweetalert2-1.2.4.tgz#7b7c9b56b02d26c1016f20a3fe342e1f2f0524fa"
+  dependencies:
+    sweetalert2 "7.x"
+
+vue-sweetalert@^0.1.18:
+  version "0.1.18"
+  resolved "https://registry.yarnpkg.com/vue-sweetalert/-/vue-sweetalert-0.1.18.tgz#9c0ed3b5f318b4ba4764d4b07b9f31ef6afc53eb"
+  dependencies:
+    babel-runtime "^6.23.0"
+    sweetalert2 "^6.6.6"
+    vue "^2.2.1"
+
 vue-template-compiler@^2.5.2:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.16.tgz#93b48570e56c720cdf3f051cc15287c26fbd04cb"
@@ -6545,7 +6571,7 @@ vue2-editor@^2.4.4:
     quill-image-drop-module "^1.0.3"
     quill-image-resize-module "^3.0.0"
 
-vue@^2.5.2:
+vue@^2.2.1, vue@^2.5.2:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
 
