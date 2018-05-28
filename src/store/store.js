@@ -3,12 +3,12 @@ import Vuex from 'vuex'
 import firebase from 'firebase'
 
 let config = {
-  apiKey: 'AIzaSyDZiGEHS_dMBgz43QBCCdoKN5KX-Rulc6U',
-  authDomain: 'vue-project-4a8f5.firebaseapp.com',
-  databaseURL: 'https://vue-project-4a8f5.firebaseio.com',
-  projectId: 'vue-project-4a8f5',
-  storageBucket: 'vue-project-4a8f5.appspot.com',
-  messagingSenderId: '232717547987'
+  apiKey: 'AIzaSyCmWtP5PY9Jezs94HjrzvfdxNIAhKcDDXU',
+  authDomain: 'midtermadv.firebaseapp.com',
+  databaseURL: 'https://midtermadv.firebaseio.com',
+  projectId: 'midtermadv',
+  storageBucket: 'midtermadv.appspot.com',
+  messagingSenderId: '498210216713'
 }
 var firebaseApp = firebase.initializeApp(config)
 let provider = new firebase.auth.FacebookAuthProvider()
@@ -20,56 +20,42 @@ var db = firebaseApp.database()
 Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
-    product: {},
-    productall: [],
-    carts: {}
+    news: {},
+    newsAll: {},
+    readNew: ''
   },
   getters: {
-    product: state => state.product,
-    productall: state => state.productall,
-    carts: state => state.carts
+    news: state => state.news,
+    newsAll: state => state.newsAll,
+    readNew: state => state.readNew
   },
   mutations: {
-    setProduct (state, product) {
-      state.product = product
+    setNews (state, news) {
+      state.news = news
     },
-    setProductall (state, product) {
-      state.productall = product
+    setnewsAll (state, newsAll) {
+      state.newsAll = newsAll
     },
-    setCarts (state, carts) {
-      state.carts = carts
+    setreadNew (state, readNew) {
+      state.readNew = readNew
     }
   },
   actions: {
-    inputProduct (context, product) {
-      db.ref('products').push(product)
+    inputNews (context, news) {
+      db.ref('News').push(news)
     },
-    showCarts (context) {
-      db.ref('carts').on('value', (snapshot) => {
-        context.commit('setCarts', snapshot.val())
-      })
-    },
-    showProduct (context) {
-      var ref = db.ref('products')
+    showNews (context) {
+      var ref = db.ref('News')
       ref.on('value', (snapshot) => {
-        context.commit('setProductall', snapshot.val())
+        context.commit('setnewsAll', snapshot.val())
       })
     },
-    updateStock (context, key) {
-      if (context.state.productall[key].count === 0) {
-        return 0
-      } else {
-        db.ref('products').child([key] + '/count').set(context.state.productall[key].count - 1)
-        if (context.state.carts[key] == null) {
-          db.ref('carts').child([key] + '/count').set(1)
-          db.ref('carts').child([key] + '/price').set(context.state.productall[key].price)
-          db.ref('carts').child('/total').set(1)
-        } else {
-          db.ref('carts').child([key] + '/count').set(context.state.carts[key].count + 1)
-          db.ref('carts').child([key] + '/price').set(context.state.carts[key].price + context.state.productall[key].price)
-          db.ref('carts').child('/total').set(context.state.carts.total + 1)
-        }
-      }
+    readNews (context, key) {
+      db.ref('readNews').set(key)
+      context.commit('setreadNew', key)
+    },
+    removeNews (context, key) {
+      db.ref('News').child(key).remove()
     }
   }
 })
