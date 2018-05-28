@@ -88,7 +88,9 @@ export default {
         confirmButtonText: 'Yes, Edit Post!'
       }).then((result) => {
         if (result.value) {
-          this.$router.push({path: '/UpdateNews'})
+          this.$router.push({
+            path: '/UpdateNews/' + index
+          })
         }
       })
     }

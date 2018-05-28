@@ -55,19 +55,20 @@ export default {
         content: '',
         img: '',
         date: ''
-      }
+      },
+      id: ''
     }
   },
   created () {
     this.showNews()
-    this.News.title = this.newsAll[this.readNew].title
-    this.News.content = this.newsAll[this.readNew].content
-    this.News.img = this.newsAll[this.readNew].img
-    this.News.date = this.newsAll[this.readNew].date
+    this.id = this.$route.params.id
+    this.News.title = this.newsAll[this.id].title
+    this.News.content = this.newsAll[this.id].content
+    this.News.img = this.newsAll[this.id].img
+    this.News.date = this.newsAll[this.id].date
   },
   computed: {
     ...mapGetters([
-      'readNew',
       'newsAll'
     ])
   },
