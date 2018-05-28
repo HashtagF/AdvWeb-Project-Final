@@ -22,13 +22,11 @@ var db = firebaseApp.database()
 export const store = new Vuex.Store({
   state: {
     news: {},
-    newsAll: {},
-    readNew: ''
+    newsAll: {}
   },
   getters: {
     news: state => state.news,
-    newsAll: state => state.newsAll,
-    readNew: state => state.readNew
+    newsAll: state => state.newsAll
   },
   mutations: {
     setNews (state, news) {
@@ -36,9 +34,6 @@ export const store = new Vuex.Store({
     },
     setnewsAll (state, newsAll) {
       state.newsAll = newsAll
-    },
-    setreadNew (state, readNew) {
-      state.readNew = readNew
     }
   },
   actions: {
@@ -50,10 +45,6 @@ export const store = new Vuex.Store({
       ref.on('value', (snapshot) => {
         context.commit('setnewsAll', snapshot.val())
       })
-    },
-    readNews (context, key) {
-      db.ref('readNews').set(key)
-      context.commit('setreadNew', key)
     },
     removeNews (context, key) {
       db.ref('News').child(key).remove()

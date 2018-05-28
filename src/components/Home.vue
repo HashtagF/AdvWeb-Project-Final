@@ -29,7 +29,7 @@
           <div class="card-body">
             <h5 class="card-title">{{news.title}}</h5>
             <div class="card-text" v-html="news.content.substr(0,40)"></div>
-            <router-link to='ShowNews'><a href="#" class="btn btn-primary " @click="readNews(index)">Read More</a></router-link>
+            <router-link :to="{ name: 'ShowNews', params: {id: index} }"><a href="#" class="btn btn-primary " >Read More</a></router-link>
           </div>
         </div>
       </div>

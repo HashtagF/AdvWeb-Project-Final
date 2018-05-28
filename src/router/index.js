@@ -21,7 +21,7 @@ export default new Router({
       component: Post
     },
     {
-      path: '/ShowNews',
+      path: '/ShowNews/:id',
       name: 'ShowNews',
       component: ShowNews
     },
@@ -31,7 +31,7 @@ export default new Router({
       component: Dashboard
     },
     {
-      path: '/UpdateNews',
+      path: '/UpdateNews/:id',
       name: 'UpdateNews',
       component: UpdateNews
     }

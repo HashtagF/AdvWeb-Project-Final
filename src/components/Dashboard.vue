@@ -27,7 +27,7 @@
             <td>{{news.date}}</td>
             <td> <a href="#" @click="editNews(index)"><img src="../assets/edit.svg" alt=""></a>   </td>
             <td> <a href="#" @click="delNews(index)"><img src="../assets/delete.svg" alt=""></a>  </td>
-            <td> <router-link to="ShowNews"><a href="#" @click="readNews(index)"><img src="../assets/show.svg" alt=""></a></router-link> </td>
+            <td> <router-link :to="{ name: 'ShowNews', params: {id: index} }"><a href="#"><img src="../assets/show.svg" alt=""></a></router-link> </td>
           </tr>
         </table>
       </div>
@@ -55,8 +55,7 @@ export default {
   methods: {
     ...mapActions([
       'showNews',
-      'removeNews',
-      'readNews'
+      'removeNews'
     ]),
     delNews (index) {
       this.$swal({
@@ -79,7 +78,6 @@ export default {
       })
     },
     editNews (index) {
-      this.readNews(index)
       this.$swal({
         title: 'Are you sure?',
         text: 'แก้ไขโพส !',
