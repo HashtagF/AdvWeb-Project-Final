@@ -46,11 +46,15 @@
         </social-sharing>
       </div>
     </div>
+    <div class="col-12">
+      <commentView ref="comment"></commentView>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import commentView from '@/components/facebookComment'
 export default {
   name: 'showNews',
   data () {
@@ -66,7 +70,8 @@ export default {
       'newsAll'
     ])
   },
-  methods: {
+  components: {
+    commentView
   }
 }
 </script>
