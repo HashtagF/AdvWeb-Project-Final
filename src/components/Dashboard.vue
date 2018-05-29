@@ -17,7 +17,6 @@
       <div class="col-12">
         <table class="table">
           <tr>
-            <th>รหัสข่าว</th>
             <th>หัวข้อข่าว</th>
             <th>หมวดหมู่</th>
             <th>วันที่โพส</th>
@@ -26,7 +25,6 @@
             <th>Preview</th>
           </tr>
           <tr v-for="(news, index) in newsAll" :key="index">
-            <td>{{number++}}</td>
             <td>{{news.title}}</td>
             <td>{{news.type}}</td>
             <td>{{news.date}}</td>
@@ -46,7 +44,6 @@ export default {
   name: 'Dashboard',
   data () {
     return {
-      number: 1
     }
   },
   created () {
