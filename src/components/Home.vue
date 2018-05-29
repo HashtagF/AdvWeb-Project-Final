@@ -5,7 +5,7 @@
         <h1>News (ข่าว)</h1>
       </div>
     </div>
-    <div class="row slide justify-content-center mb-4 mt-4">
+    <div class="row slide justify-content-center mb-4 mt-4 ">
       <div class="col-10">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -65,10 +65,7 @@ export default {
     ...mapGetters([
       'newsAll',
       'filterNews'
-    ]),
-    sportNews () {
-      return this.filterNews('ข่าวกีฬา')
-    }
+    ])
   },
   methods: {
     ...mapActions([

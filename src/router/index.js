@@ -5,6 +5,7 @@ import Post from '@/components/Post'
 import ShowNews from '@/components/ShowNews'
 import Dashboard from '@/components/Dashboard'
 import UpdateNews from '@/components/editPost'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/UpdateNews/:id',
       name: 'UpdateNews',
       component: UpdateNews
+    },
+    {
+      path: '/Login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

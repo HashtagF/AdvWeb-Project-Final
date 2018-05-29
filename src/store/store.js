@@ -22,12 +22,13 @@ var db = firebaseApp.database()
 export const store = new Vuex.Store({
   state: {
     news: {},
-    newsAll: {}
+    newsAll: {},
+    filterNews: ''
   },
   getters: {
     news: state => state.news,
     newsAll: state => state.newsAll,
-    filterNews: state => type => state.newsAll.filter(news => news.type === type)
+    filterNews: state => state.filterNews
   },
   mutations: {
     setNews (state, news) {
@@ -35,6 +36,9 @@ export const store = new Vuex.Store({
     },
     setnewsAll (state, newsAll) {
       state.newsAll = newsAll
+    },
+    setfilterNews (state, filterNews) {
+      state.filterNews = filterNews
     }
   },
   actions: {

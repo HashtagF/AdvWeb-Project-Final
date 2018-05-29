@@ -47,6 +47,7 @@ export default {
   name: 'Home',
   data () {
     return {
+      search: ''
     }
   },
   created () {
@@ -56,10 +57,7 @@ export default {
     ...mapGetters([
       'newsAll',
       'filterNews'
-    ]),
-    sportNews () {
-      return this.filterNews('ข่าวกีฬา')
-    }
+    ])
   },
   methods: {
     ...mapActions([
