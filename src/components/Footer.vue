@@ -2,12 +2,17 @@
   <footer class=" bg-secondary text-white">
     <div class="container">
       <div class="row pt-4 pb-5 mt-5">
-        <div class="col-4">
-          <h5>Web Project</h5>
-          <p>เว็บข่าวว</p>
-        </div>
-        <div class="col-4">
-          <h5>หมวดหมู่ข่าว</h5>
+        <div class="col-8">
+          <weather
+              api-key="f009ec86310ae59adc11ad129de6ad6c"
+              title="Weather"
+              latitude="14.1592175"
+              longitude="101.3450957"
+              language="en"
+              units="uk"
+              bar-color="white"
+              text-color="white">
+          </weather>
         </div>
         <div class="col-4">
           <h5>ติดต่อเรา</h5>
@@ -22,6 +27,8 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
+import VueWeatherWidget from 'vue-weather-widget'
+import 'vue-weather-widget/dist/css/vue-weather-widget.css'
 export default {
   name: 'Home',
   data () {
@@ -30,6 +37,9 @@ export default {
   },
   created () {
     this.showNews()
+  },
+  components: {
+    'weather': VueWeatherWidget
   },
   computed: {
     ...mapGetters([

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <img :src="newsAll[id].img" class="img-fluid">
+        <img :src="newsAll[id].img" class="img-fluid" width="80%" height="auto">
       </div>
     </div>
     <div class="row pt-3">
