@@ -17,7 +17,7 @@
       <div class="col-12">
         <table class="table">
           <tr>
-            <th>ลำดับ</th>
+            <th>รหัสข่าว</th>
             <th>หัวข้อข่าว</th>
             <th>หมวดหมู่</th>
             <th>วันที่โพส</th>

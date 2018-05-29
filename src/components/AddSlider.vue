@@ -11,7 +11,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-lg" >รูปที่ 1 : </span>
           </div>
-          <input required type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="slider.img1">
+          <input required type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="tslider.img1">
         </div>
       </div>
       <div class="col-12 mt-4">
@@ -19,7 +19,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-lg" >รูปที่ 2 : </span>
           </div>
-          <input required type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="slider.img2">
+          <input required type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="tslider.img2">
         </div>
       </div>
       <div class="col-12 mt-4">
@@ -27,7 +27,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-lg" >รูปที่ 3 : </span>
           </div>
-          <input required type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="slider.img3">
+          <input required type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" v-model="tslider.img3">
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      slider: {
+      tslider: {
         img1: '',
         img2: '',
         img3: ''
@@ -56,16 +56,21 @@ export default {
     }
   },
   created () {
-    this.showNews()
+    this.showSlider()
+    this.tslider.img1 = this.slider.img1
+    this.tslider.img2 = this.slider.img2
+    this.tslider.img3 = this.slider.img3
   },
   computed: {
     ...mapGetters([
-      'newsAll'
+      'newsAll',
+      'slider'
     ])
   },
   methods: {
     ...mapActions([
-      'updateSlider'
+      'updateSlider',
+      'showSlider'
     ]),
     cancelNews () {
       this.$swal({
@@ -87,13 +92,13 @@ export default {
       })
     },
     editSlider () {
+      this.updateSlider(this.tslider)
       this.$swal({
         type: 'success',
         title: 'Success Update Slider'
       })
-      this.updateSlider(this.slider)
       this.$router.push({path: '/Dashboard'})
-    },
+    }
   }
 }
 </script>

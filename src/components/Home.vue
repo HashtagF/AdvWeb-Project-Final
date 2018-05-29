@@ -5,8 +5,8 @@
         <h1>News (ข่าว)</h1>
       </div>
     </div>
-    <div class="row slide justify-content-center mb-4 mt-4 ">
-      <div class="col-10">
+    <div class="row slide justify-content-center mb-4 mt-4 " >
+      <div class="col-12">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -15,13 +15,13 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="../assets/s1.svg" alt="First slide">
+              <img class="d-block w-100" :src="slider.img1" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/s2.svg" alt="Second slide">
+              <img class="d-block w-100" :src="slider.img2" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="../assets/s3.svg" alt="Third slide">
+              <img class="d-block w-100" :src="slider.img3" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -60,16 +60,19 @@ export default {
   },
   created () {
     this.showNews()
+    this.showSlider()
   },
   computed: {
     ...mapGetters([
       'newsAll',
-      'filterNews'
+      'filterNews',
+      'slider'
     ])
   },
   methods: {
     ...mapActions([
-      'showNews'
+      'showNews',
+      'showSlider'
     ])
   }
 }

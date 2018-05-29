@@ -23,12 +23,14 @@ export const store = new Vuex.Store({
   state: {
     news: {},
     newsAll: {},
-    filterNews: ''
+    filterNews: '',
+    slider: {}
   },
   getters: {
     news: state => state.news,
     newsAll: state => state.newsAll,
-    filterNews: state => state.filterNews
+    filterNews: state => state.filterNews,
+    slider: state => state.slider
   },
   mutations: {
     setNews (state, news) {
@@ -39,6 +41,9 @@ export const store = new Vuex.Store({
     },
     setfilterNews (state, filterNews) {
       state.filterNews = filterNews
+    },
+    setSlider (state, slider) {
+      state.slider = slider
     }
   },
   actions: {
@@ -69,6 +74,12 @@ export const store = new Vuex.Store({
       db.ref('Slider').child('/img1').set(slider.img1)
       db.ref('Slider').child('/img2').set(slider.img2)
       db.ref('Slider').child('/img3').set(slider.img3)
+    },
+    showSlider (context) {
+      var ref = db.ref('Slider')
+      ref.on('value', (snapshot) => {
+        context.commit('setSlider', snapshot.val())
+      })
     }
   }
 })

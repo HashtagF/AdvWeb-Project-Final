@@ -6,7 +6,7 @@
     </button>
     <div class="navbar-collapse collapse show" id="navbarsExample06" style="">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="#" @click="setFilter('')">ข่าวทั้งหมด </a>
         </li>
         <li class="nav-item">
@@ -70,5 +70,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  nav {
+    position: fixed;
+    z-index: 1030;
+    width: 100%;
+  }
 </style>
