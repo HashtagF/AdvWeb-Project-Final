@@ -31,16 +31,16 @@
                         inline-template>
          <div>
           <network network="email">
-            <button class="btn btn-secondary"><i class="fa fa-envelope"></i> Email</button>
+            <button class="btn btn-secondary" style="width:150px;"><i class="fa fa-envelope"></i> Email</button>
           </network>
           <network network="facebook">
-            <button class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</button>
+            <button class="btn btn-primary" style="width:150px;"><i class="fa fa-facebook"></i> Facebook</button>
           </network>
           <network network="googleplus">
-            <button class="btn btn-danger"><i class="fa fa-google-plu"></i> Google +</button>
+            <button class="btn btn-danger" style="width:150px;"><i class="fa fa-google-plu"></i> Google +</button>
           </network>
           <network network="line">
-            <button class="btn btn-success"><i class="fa fa-line"></i> Line</button>
+            <button class="btn btn-success" style="width:150px;"><i class="fa fa-line"></i> Line</button>
           </network>
          </div>
         </social-sharing>
