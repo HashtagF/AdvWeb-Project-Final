@@ -31,6 +31,25 @@
         </div>
       </div>
     </div>
+    <div class="row pt-1">
+      <div class="col-12">
+        <div class="input-group mb-5">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">หมวดหมู่ข่าว</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01" v-model="News.type" required>
+            <option value="ข่าวกีฬา">ข่าวกีฬา</option>
+            <option value="ข่าวบันเทิง">ข่าวบันเทิง</option>
+            <option value="ข่าวการเมือง">ข่าวการเมือง</option>
+            <option value="ข่าวในพระราชสำนัก">ข่าวในพระราชสำนัก</option>
+            <option value="ข่าวเกมส์">ข่าวเกมส์</option>
+            <option value="ข่าวต่างประเทศ">ข่าวต่างประเทศ</option>
+            <option value="ข่าวไอที">ข่าวไอที</option>
+            <option value="ข่าวไอที">อื่นๆ</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <div class="row pt-3">
       <div class="col-8">
         <button type="button" class="btn btn-primary btn-lg btn-block" @click="editNews()">Update</button>
@@ -54,7 +73,8 @@ export default {
         title: '',
         content: '',
         img: '',
-        date: ''
+        date: '',
+        type: ''
       },
       id: ''
     }

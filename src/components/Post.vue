@@ -39,9 +39,14 @@
             <label class="input-group-text" for="inputGroupSelect01">หมวดหมู่ข่าว</label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" v-model="News.type" required>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="ข่าวกีฬา">ข่าวกีฬา</option>
+            <option value="ข่าวบันเทิง">ข่าวบันเทิง</option>
+            <option value="ข่าวการเมือง">ข่าวการเมือง</option>
+            <option value="ข่าวในพระราชสำนัก">ข่าวในพระราชสำนัก</option>
+            <option value="ข่าวเกมส์">ข่าวเกมส์</option>
+            <option value="ข่าวต่างประเทศ">ข่าวต่างประเทศ</option>
+            <option value="ข่าวไอที">ข่าวไอที</option>
+            <option value="ข่าวไอที">อื่นๆ</option>
           </select>
         </div>
       </div>
