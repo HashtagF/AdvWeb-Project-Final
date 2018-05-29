@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" style="padding-top:100px;">
     <div class="row">
       <div class="col">
         <h1>Edit Post</h1>

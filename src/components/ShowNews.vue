@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" style="padding-top:100px;">
     <div class="row">
       <div class="col-12 text-center">
         <img :src="newsAll[id].img" class="img-fluid" width="80%" height="auto">

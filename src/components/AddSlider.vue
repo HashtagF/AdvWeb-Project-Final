@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" style="padding-top:100px;">
     <div class="row">
       <div class="col-12 text-center">
         <h1>เพิ่มรูปลง Slider</h1>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container text-center">
+  <div class="container text-center" style="padding-top:100px;">
     <div class="row mb-5">
       <div class="col">
         <h1>Login Dashboard</h1>
