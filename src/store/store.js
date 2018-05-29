@@ -50,10 +50,11 @@ export const store = new Vuex.Store({
       db.ref('News').child(key).remove()
     },
     updateNews (context, news) {
-      db.ref('News').child(context.state.readNew + '/title').set(news.title)
-      db.ref('News').child(context.state.readNew + '/date').set(news.date)
-      db.ref('News').child(context.state.readNew + '/img').set(news.img)
-      db.ref('News').child(context.state.readNew + '/content').set(news.content)
+      db.ref('News').child(news.id + '/title').set(news.title)
+      db.ref('News').child(news.id + '/date').set(news.date)
+      db.ref('News').child(news.id + '/img').set(news.img)
+      db.ref('News').child(news.id + '/content').set(news.content)
+      db.ref('News').child(news.id + '/type').set(news.type)
     }
   }
 })

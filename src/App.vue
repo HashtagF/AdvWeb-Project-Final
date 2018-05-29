@@ -36,9 +36,8 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-md-0 mr-4">
-          <input class="form-control" type="text" placeholder="Search">
+          <input class="form-control" type="text" placeholder="Search" @keyup.enter="filter()" v-model="search">
         </form>
-        <button type="button" class="btn btn-outline-primary">Login Facebook</button>
       </div>
     </nav>
     <router-view/>
@@ -47,7 +46,17 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      search: ''
+    }
+  },
+  methods: {
+    filter () {
+      console.log(this.search)
+    }
+  }
 }
 </script>
 
@@ -59,8 +68,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-nav {
-  position: fixed;
 }
 </style>

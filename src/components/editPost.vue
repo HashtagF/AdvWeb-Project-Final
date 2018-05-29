@@ -74,7 +74,8 @@ export default {
         content: '',
         img: '',
         date: '',
-        type: ''
+        type: '',
+        id: ''
       },
       id: ''
     }
@@ -86,6 +87,7 @@ export default {
     this.News.content = this.newsAll[this.id].content
     this.News.img = this.newsAll[this.id].img
     this.News.date = this.newsAll[this.id].date
+    this.News.type = this.newsAll[this.id].type
   },
   computed: {
     ...mapGetters([
@@ -102,6 +104,7 @@ export default {
         type: 'success',
         title: 'Success Post'
       })
+      this.News.id = this.id
       this.updateNews(this.News)
       this.$router.push({path: '/Dashboard'})
     },
