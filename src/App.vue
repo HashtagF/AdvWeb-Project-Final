@@ -30,5 +30,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+  background-image: url('../src/assets/bg.png');
+  background-position: left top, left top;
+  background-attachment:fixed;
 }
 </style>
