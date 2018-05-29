@@ -6,6 +6,7 @@ import ShowNews from '@/components/ShowNews'
 import Dashboard from '@/components/Dashboard'
 import UpdateNews from '@/components/editPost'
 import Login from '@/components/Login'
+import AddSlider from '@/components/AddSlider'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/Login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/AddSlider',
+      name: 'AddSlider',
+      component: AddSlider
     }
   ]
 })

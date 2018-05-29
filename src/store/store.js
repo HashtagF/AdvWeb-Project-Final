@@ -63,6 +63,12 @@ export const store = new Vuex.Store({
     },
     setFilter (context, type) {
       context.commit('setfilterNews', type)
+      this.$route.push({path: '/'})
+    },
+    updateSlider (context, slider) {
+      db.ref('Slider').child('/img1').set(slider.img1)
+      db.ref('Slider').child('/img2').set(slider.img2)
+      db.ref('Slider').child('/img3').set(slider.img3)
     }
   }
 })

@@ -7,6 +7,9 @@
     </div>
     <div class="row justify-content-end">
       <div class="col-3 flaot-right">
+        <router-link to="AddSlider"><button type="button" class="btn btn-warning" style="width:100%;">Slider</button></router-link>
+      </div>
+      <div class="col-3 flaot-right">
         <router-link to="Post"><button type="button" class="btn btn-info" style="width:100%;">New Post</button></router-link>
       </div>
     </div>

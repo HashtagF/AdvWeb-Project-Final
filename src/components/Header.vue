@@ -19,9 +19,6 @@
           <a class="nav-link" href="#" @click="setFilter('ข่าวการเมือง')">ข่าวการเมือง</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" @click="setFilter('ข่าวในพระราชสำนัก')">ข่าวในพระราชสำนัก</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#" @click="setFilter('ข่าวเกมส์')">ข่าวเกมส์</a>
         </li>
         <li class="nav-item">

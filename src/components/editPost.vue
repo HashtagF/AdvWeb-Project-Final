@@ -41,11 +41,10 @@
             <option value="ข่าวกีฬา">ข่าวกีฬา</option>
             <option value="ข่าวบันเทิง">ข่าวบันเทิง</option>
             <option value="ข่าวการเมือง">ข่าวการเมือง</option>
-            <option value="ข่าวในพระราชสำนัก">ข่าวในพระราชสำนัก</option>
             <option value="ข่าวเกมส์">ข่าวเกมส์</option>
             <option value="ข่าวต่างประเทศ">ข่าวต่างประเทศ</option>
             <option value="ข่าวไอที">ข่าวไอที</option>
-            <option value="ข่าวไอที">อื่นๆ</option>
+            <option value="อื่นๆ">อื่นๆ</option>
           </select>
         </div>
       </div>
