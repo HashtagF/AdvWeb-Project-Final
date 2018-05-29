@@ -23,6 +23,7 @@
     </div>
     <div class="row pb-5 pt-3 text-center">
       <div class="col">
+        <h6>แชร์สิ่งนี้</h6>
         <social-sharing :url="id"
                         :title="newsAll[id].title"
                         :description="newsAll[id].type"
