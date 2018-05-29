@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <h1>News</h1>
+      <div class="col-12 text-center">
+        <h1>News (ข่าว)</h1>
       </div>
     </div>
-    <div class="row slide justify-content-center pb-4">
+    <div class="row slide justify-content-center mb-4 mt-4">
       <div class="col-10">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
