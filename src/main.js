@@ -8,7 +8,10 @@ import BootstrapVue from 'bootstrap-vue'
 import { store } from './store/store'
 import VueSweetalert2 from 'vue-sweetalert2'
 import SocialSharing from 'vue-social-sharing'
+import Buefy from 'buefy'
+import 'buefy/lib/buefy.css'
 
+Vue.use(Buefy)
 Vue.use(SocialSharing)
 Vue.use(VueSweetalert2)
 Vue.use(Vuex)

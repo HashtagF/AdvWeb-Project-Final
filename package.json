@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.9",
+    "buefy": "^0.6.5",
     "firebase": "^4.13.1",
     "sweetalert2": "^7.21.1",
     "vue": "^2.5.2",

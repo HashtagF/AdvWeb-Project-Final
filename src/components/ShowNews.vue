@@ -21,7 +21,7 @@
       <div class="col-12 content" v-html="newsAll[id].content">
       </div>
     </div>
-    <div class="row pb-5 pt-3">
+    <div class="row pb-5 pt-3 text-center">
       <div class="col">
         <social-sharing :url="id"
                         :title="newsAll[id].title"

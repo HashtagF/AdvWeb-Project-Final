@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container text-center">
     <h5>Facebook Comment</h5>
-    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="10"></div>
+    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="10" data-width="700"></div>
   </div>
 </template>
 
