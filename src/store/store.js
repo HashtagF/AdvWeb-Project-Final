@@ -26,7 +26,8 @@ export const store = new Vuex.Store({
   },
   getters: {
     news: state => state.news,
-    newsAll: state => state.newsAll
+    newsAll: state => state.newsAll,
+    filterNews: state => type => state.newsAll.filter(news => news.type === type)
   },
   mutations: {
     setNews (state, news) {

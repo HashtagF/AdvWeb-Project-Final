@@ -16,6 +16,7 @@
           <tr>
             <th>ลำดับ</th>
             <th>หัวข้อข่าว</th>
+            <th>หมวดหมู่</th>
             <th>วันที่โพส</th>
             <th>แก้ไข</th>
             <th>ลบ</th>
@@ -24,6 +25,7 @@
           <tr v-for="(news, index) in newsAll" :key="index">
             <td>{{number++}}</td>
             <td>{{news.title}}</td>
+            <td>{{news.type}}</td>
             <td>{{news.date}}</td>
             <td> <a href="#" @click="editNews(index)"><img src="../assets/edit.svg" alt=""></a>   </td>
             <td> <a href="#" @click="delNews(index)"><img src="../assets/delete.svg" alt=""></a>  </td>

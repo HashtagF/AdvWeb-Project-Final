@@ -7,7 +7,9 @@ import Vuex from 'vuex'
 import BootstrapVue from 'bootstrap-vue'
 import { store } from './store/store'
 import VueSweetalert2 from 'vue-sweetalert2'
+import SocialSharing from 'vue-social-sharing'
 
+Vue.use(SocialSharing)
 Vue.use(VueSweetalert2)
 Vue.use(Vuex)
 Vue.use(BootstrapVue)

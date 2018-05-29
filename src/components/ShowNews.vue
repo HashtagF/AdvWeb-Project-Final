@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <img :src="newsAll[id].img" width="100%" height="300px">
+      <div class="col-12 text-center">
+        <img :src="newsAll[id].img" class="img-fluid">
       </div>
     </div>
     <div class="row pt-3">
@@ -10,12 +10,40 @@
         <h1>{{newsAll[id].title}}</h1>
       </div>
       <div class="col-4">
+        <h6>หมวดหมู่ข่าว : {{newsAll[id].type}}</h6>
+      </div>
+      <div class="col-4">
         <h6>วันที่ : {{newsAll[id].date}}</h6>
       </div>
     </div>
     <hr>
     <div class="row pt-5">
-      <div class="col-12" v-html="newsAll[id].content">
+      <div class="col-12 content" v-html="newsAll[id].content">
+      </div>
+    </div>
+    <div class="row pb-5 pt-3">
+      <div class="col">
+        <social-sharing :url="id"
+                        :title="newsAll[id].title"
+                        :description="newsAll[id].type"
+                        hashtags="#Webproject"
+                        twitter-user="vuejs"
+                        inline-template>
+         <div>
+          <network network="email">
+            <button class="btn btn-secondary"><i class="fa fa-envelope"></i> Email</button>
+          </network>
+          <network network="facebook">
+            <button class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</button>
+          </network>
+          <network network="googleplus">
+            <button class="btn btn-danger"><i class="fa fa-google-plu"></i> Google +</button>
+          </network>
+          <network network="line">
+            <button class="btn btn-success"><i class="fa fa-line"></i> Line</button>
+          </network>
+         </div>
+        </social-sharing>
       </div>
     </div>
   </div>
@@ -45,8 +73,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  img {
-    width: 600px;
-    height: auto;
-  }
+
 </style>
