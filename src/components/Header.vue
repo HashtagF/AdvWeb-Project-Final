@@ -7,35 +7,35 @@
     <div class="navbar-collapse collapse show" id="navbarsExample06" style="">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <router-link to="Dashboard"><a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a></router-link>
+          <a class="nav-link" href="#" @click="setFilter('')">ข่าวทั้งหมด </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ข่าวกีฬา</a>
+          <a class="nav-link" href="#" @click="setFilter('ข่าวกีฬา')">ข่าวกีฬา</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ข่าวบันเทิง</a>
+          <a class="nav-link" href="#" @click="setFilter('ข่าวบันเทิง')">ข่าวบันเทิง</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ข่าวการเมือง</a>
+          <a class="nav-link" href="#" @click="setFilter('ข่าวการเมือง')">ข่าวการเมือง</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ข่าวในพระราชสำนัก</a>
+          <a class="nav-link" href="#" @click="setFilter('ข่าวในพระราชสำนัก')">ข่าวในพระราชสำนัก</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ข่าวเกมส์</a>
+          <a class="nav-link" href="#" @click="setFilter('ข่าวเกมส์')">ข่าวเกมส์</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ข่าวต่างประเทศ</a>
+          <a class="nav-link" href="#" @click="setFilter('ข่าวต่างประเทศ')">ข่าวต่างประเทศ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ข่าวไอที</a>
+          <a class="nav-link" href="#" @click="setFilter('ข่าวไอที')">ข่าวไอที</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">อื่นๆ</a>
+          <a class="nav-link" href="#" @click="setFilter('อื่นๆ')">อื่นๆ</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-md-0 mr-4">
-        <input class="form-control" type="text" placeholder="Search" @keyup.enter="filter()" v-model="search">
+        <input class="form-control" type="text" placeholder="Search" @keyup.enter="search()" v-model="textsearch">
       </form>
     </div>
   </nav>
@@ -47,7 +47,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      search: ''
+      textsearch: ''
     }
   },
   created () {
@@ -61,8 +61,12 @@ export default {
   },
   methods: {
     ...mapActions([
-      'showNews'
-    ])
+      'showNews',
+      'setFilter'
+    ]),
+    search () {
+
+    }
   }
 }
 </script>

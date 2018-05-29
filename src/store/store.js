@@ -60,6 +60,9 @@ export const store = new Vuex.Store({
       db.ref('News').child(news.id + '/img').set(news.img)
       db.ref('News').child(news.id + '/content').set(news.content)
       db.ref('News').child(news.id + '/type').set(news.type)
+    },
+    setFilter (context, type) {
+      context.commit('setfilterNews', type)
     }
   }
 })

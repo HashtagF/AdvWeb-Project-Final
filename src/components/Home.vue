@@ -37,7 +37,7 @@
     </div>
     <div class="showNews row">
       <div class="col-4 px-1 pb-1" v-for="(news, index) in newsAll" :key="index">
-        <div class="card" style="width: 100%; height:420px;">
+        <div class="card" style="width: 100%; height:420px;" v-if="news.type === filterNews || filterNews === ''">
           <img class="card-img-top" :src="news.img" style="height:230px; width:auto;">
           <div class="card-body">
             <h5 class="card-title">{{news.title}}</h5>
