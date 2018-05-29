@@ -30,9 +30,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
-  background-image: url('../src/assets/bg2.png');
+  /* background-image: url('../src/assets/bg.png'); */
   background-position:;
   background-attachment:fixed;
   background-size: 1920px 1080px;
+
 }
 </style>
